@@ -1,6 +1,10 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   reactStrictMode: true,
+  output: "export",
+  trailingSlash: true,
+  basePath: "/Portfolio",
+  assetPrefix: "/Portfolio/",
   images: {
     remotePatterns: [
       { protocol: "https", hostname: "avatars.githubusercontent.com" },

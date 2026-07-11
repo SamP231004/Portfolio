@@ -6,6 +6,8 @@
     "start": "next dev -H 0.0.0.0 -p 3000",
     "dev": "next dev -H 0.0.0.0 -p 3000",
     "build": "next build",
+    "export": "next build",
+    "deploy:gh-pages": "npm run build && powershell -NoProfile -Command \"New-Item -ItemType File -Path out/.nojekyll -Force | Out-Null\" && npx gh-pages -d out -b gh-pages",
     "serve": "next start -H 0.0.0.0 -p 3000",
     "lint": "next lint"
   },
@@ -38,6 +40,7 @@
     "autoprefixer": "^10.4.20",
     "eslint": "^8.57.1",
     "eslint-config-next": "14.2.30",
+    "gh-pages": "^6.3.0",
     "postcss": "^8.5.10",
     "tailwindcss": "^3.4.17",
     "typescript": "^5.7.2"
