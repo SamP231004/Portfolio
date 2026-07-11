@@ -14,6 +14,8 @@ import { toast } from "@/components/ui/sonner";
 import { profile } from "@/data/profile";
 import { socials } from "@/data/socials";
 import { socialIcons } from "@/components/ui/social-icons";
+import { db } from "@/lib/firebase";
+import { addDoc, collection, serverTimestamp } from "firebase/firestore";
 
 const schema = z.object({
   name: z.string().trim().min(2, "Please enter your name."),
@@ -49,26 +51,18 @@ export function Contact() {
   const onSubmit = async (values: FormValues) => {
     setSubmitting(true);
     try {
-      // Mailto fallback (no backend configured). Ready for Resend later.
-      const subject = encodeURIComponent(
-        `Portfolio inquiry from ${values.name}`
-      );
-      const bodyLines = [
-        `Name: ${values.name}`,
-        `Email: ${values.email}`,
-        values.phone ? `Phone: ${values.phone}` : null,
-        "",
-        values.message,
-      ].filter(Boolean);
-      const body = encodeURIComponent(bodyLines.join("\n"));
-      const mailto = `mailto:${profile.email}?subject=${subject}&body=${body}`;
+      await addDoc(collection(db, "messages"), {
+        name: values.name,
+        email: values.email,
+        phone: values.phone || "",
+        message: values.message,
+        createdAt: serverTimestamp(),
+      });
 
-      // Small delay to show loading state
       await new Promise((r) => setTimeout(r, 400));
-      window.location.href = mailto;
 
-      toast.success("Opening your email client…", {
-        description: "Your message is ready to send.",
+      toast.success("Message saved", {
+        description: "Your message has been stored and can be viewed on the messages page.",
       });
       reset();
     } catch {

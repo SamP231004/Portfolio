@@ -29,6 +29,9 @@ export const metadata: Metadata = {
   ],
   authors: [{ name: "Samarth Patel", url: SITE_URL }],
   creator: "Samarth Patel",
+  icons: {
+    icon: "/favicon.ico",
+  },
   alternates: {
     canonical: SITE_URL,
   },

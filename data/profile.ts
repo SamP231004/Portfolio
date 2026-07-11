@@ -1,6 +1,6 @@
 export const profile = {
   name: "Samarth Patel",
-  shortName: "SP.",
+  shortName: "SAM.",
   title: "Software Engineer",
   secondaryTitle: "Full-Stack Developer",
   email: "samp231004@gmail.com",
@@ -28,5 +28,12 @@ export const profile = {
     "Open-Source Contributor",
     "Absolute Learner",
   ],
-  floatingBadges: ["Java", "Spring Boot", "React", "Next.js", "Node.js", "AWS"],
+  floatingBadges: [
+    "React",
+    "Relentless Learner",
+    "Java",
+    "Spring Boot",
+    "Next.js",
+    "AWS",
+  ],
 };
