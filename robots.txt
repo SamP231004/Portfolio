@@ -1,0 +1,4 @@
+User-Agent: *
+Allow: /
+
+Sitemap: https://samp231004.github.io/Portfolio/sitemap.xml
