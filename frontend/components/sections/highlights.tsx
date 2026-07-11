@@ -31,7 +31,7 @@ const items = [
 export function Highlights() {
   return (
     <section
-      className="relative border-y border-border bg-[#0b0b0d]"
+      className="relative border-y border-border bg-highlights-bg"
       data-testid="highlights-section"
     >
       <div className="mx-auto max-w-content px-6 py-14">

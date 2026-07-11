@@ -63,11 +63,11 @@ function ProjectCard({
         >
           <div className="relative rounded-xl border border-border bg-card overflow-hidden shadow-2xl shadow-black/40">
             {/* Browser bar */}
-            <div className="flex items-center justify-between px-4 py-2.5 border-b border-border bg-[#0d0d10]">
+            <div className="flex items-center justify-between px-4 py-2.5 border-b border-border bg-card-alt">
               <div className="flex items-center gap-1.5">
-                <span className="h-2.5 w-2.5 rounded-full bg-zinc-700" />
-                <span className="h-2.5 w-2.5 rounded-full bg-zinc-700" />
-                <span className="h-2.5 w-2.5 rounded-full bg-zinc-700" />
+                <span className="h-2.5 w-2.5 rounded-full bg-muted-foreground/40" />
+                <span className="h-2.5 w-2.5 rounded-full bg-muted-foreground/40" />
+                <span className="h-2.5 w-2.5 rounded-full bg-muted-foreground/40" />
               </div>
               <span className="font-mono text-[10px] text-muted-foreground truncate max-w-[60%]">
                 {project.liveUrl
@@ -76,7 +76,7 @@ function ProjectCard({
               </span>
               <span className="w-8" />
             </div>
-            <div className="relative aspect-[16/10] overflow-hidden bg-[#0d0d10]">
+            <div className="relative aspect-[16/10] overflow-hidden bg-card-alt">
               <Image
                 src={project.screenshot}
                 alt={`${project.title} — ${project.subtitle}`}

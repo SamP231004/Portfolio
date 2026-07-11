@@ -27,8 +27,10 @@ public/            # (drop resume.pdf here)
 ```
 
 ## Implemented (Dec 2025 – initial build)
-- Sticky nav with active section indicator, mobile slide-down menu, GitHub/LinkedIn/X icons, Resume button
+- Sticky nav with active section indicator, mobile slide-down menu, GitHub/LinkedIn/X icons, **light/dark theme toggle**, Resume button
 - Hero (two-column) with availability badge, name, headline, rotating role text (Framer Motion AnimatePresence), profile card with floating tech badges (Java, Spring Boot, React, Next.js, Node.js, AWS), grid + radial glow background
+- **Light/Dark theme system** — homegrown ThemeProvider using CSS custom properties, `.dark` class on `<html>`, localStorage persistence (`samarth-portfolio-theme`), pre-hydration inline script prevents FOUC
+- **Resume Preview Dialog** — shadcn Dialog + `<object>`/`<iframe>` embed for inline PDF preview with Open-in-new-tab + Download links. Gracefully handles missing `public/resume.pdf` with a clean empty state and instructions
 - Engineering Highlights: 4-card row (Production Applications, Cloud Deployment, Full-Stack Engineering, Open Source)
 - About: heading + long-form copy + 3 side cards (What I Build, How I Work, Currently Exploring)
 - Experience timeline: DeepNeurons.ai (with certificate button) + SmartInternz

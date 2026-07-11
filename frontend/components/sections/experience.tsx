@@ -7,7 +7,7 @@ export function Experience() {
   return (
     <section
       id="experience"
-      className="relative py-24 md:py-32 bg-[#0a0a0c] border-y border-border"
+      className="relative py-24 md:py-32 bg-section-alt border-y border-border"
       data-testid="experience-section"
     >
       <div className="mx-auto max-w-content px-6">

@@ -6,7 +6,7 @@ export function Skills() {
   return (
     <section
       id="skills"
-      className="relative py-24 md:py-32 bg-[#0a0a0c] border-y border-border"
+      className="relative py-24 md:py-32 bg-section-alt border-y border-border"
       data-testid="skills-section"
     >
       <div className="mx-auto max-w-content px-6">

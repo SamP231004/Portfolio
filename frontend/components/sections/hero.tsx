@@ -4,8 +4,9 @@ import Image from "next/image";
 import Link from "next/link";
 import { AnimatePresence, motion, useReducedMotion } from "framer-motion";
 import { useEffect, useState } from "react";
-import { ArrowRight, FileText } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { ResumeDialog } from "@/components/resume-dialog";
 import { profile } from "@/data/profile";
 import { socials } from "@/data/socials";
 import { socialIcons } from "@/components/ui/social-icons";
@@ -113,21 +114,12 @@ export function Hero() {
                 <ArrowRight size={16} />
               </Link>
             </Button>
-            <Button
-              asChild
-              variant="outline"
-              size="lg"
-              data-testid="hero-resume-button"
-            >
-              <a
-                href={profile.resumeUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <FileText size={16} />
-                View Resume
-              </a>
-            </Button>
+            <ResumeDialog
+              triggerLabel="View Resume"
+              triggerSize="lg"
+              triggerVariant="outline"
+              triggerTestId="hero-resume-button"
+            />
             <div className="flex items-center gap-1 ml-1">
               {socials.map((s) => {
                 const Icon = socialIcons[s.icon];
@@ -167,11 +159,11 @@ function ProfileCard() {
       {/* Card */}
       <div className="relative rounded-2xl border border-border bg-card overflow-hidden group">
         {/* Top bar */}
-        <div className="flex items-center justify-between px-4 py-2.5 border-b border-border bg-[#0d0d10]">
+        <div className="flex items-center justify-between px-4 py-2.5 border-b border-border bg-card-alt">
           <div className="flex items-center gap-1.5">
-            <span className="h-2.5 w-2.5 rounded-full bg-zinc-700" />
-            <span className="h-2.5 w-2.5 rounded-full bg-zinc-700" />
-            <span className="h-2.5 w-2.5 rounded-full bg-zinc-700" />
+            <span className="h-2.5 w-2.5 rounded-full bg-muted-foreground/40" />
+            <span className="h-2.5 w-2.5 rounded-full bg-muted-foreground/40" />
+            <span className="h-2.5 w-2.5 rounded-full bg-muted-foreground/40" />
           </div>
           <span className="font-mono text-[10px] text-muted-foreground tracking-wider">
             samarth.dev
@@ -179,7 +171,7 @@ function ProfileCard() {
         </div>
 
         {/* Image */}
-        <div className="relative aspect-[4/5] overflow-hidden bg-[#0d0d10]">
+        <div className="relative aspect-[4/5] overflow-hidden bg-card-alt">
           <Image
             src={profile.avatar}
             alt={`${profile.name} — Software Engineer`}

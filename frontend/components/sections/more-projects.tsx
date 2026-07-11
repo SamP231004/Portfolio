@@ -7,7 +7,7 @@ import { profile } from "@/data/profile";
 export function MoreProjects() {
   return (
     <section
-      className="relative py-20 md:py-24 bg-[#0a0a0c] border-y border-border"
+      className="relative py-20 md:py-24 bg-section-alt border-y border-border"
       data-testid="more-projects-section"
     >
       <div className="mx-auto max-w-content px-6">

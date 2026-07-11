@@ -3,11 +3,12 @@
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
-import { Menu, X, FileText } from "lucide-react";
-import { Button } from "@/components/ui/button";
+import { Menu, X } from "lucide-react";
 import { navLinks, socials } from "@/data/socials";
 import { profile } from "@/data/profile";
 import { socialIcons } from "@/components/ui/social-icons";
+import { ThemeToggle } from "@/components/theme-toggle";
+import { ResumeDialog } from "@/components/resume-dialog";
 import { cn } from "@/lib/utils";
 
 const sectionIds = navLinks.map((l) => l.href.replace("#", ""));
@@ -118,22 +119,17 @@ export function Navbar() {
               );
             })}
           </div>
-          <Button
-            asChild
-            variant="outline"
-            size="sm"
-            className="hidden sm:inline-flex"
-            data-testid="nav-resume-button"
-          >
-            <a
-              href={profile.resumeUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <FileText size={14} />
-              Resume
-            </a>
-          </Button>
+          <ThemeToggle
+            className="hidden sm:inline-flex mr-1"
+            data-testid="nav-theme-toggle"
+          />
+          <ResumeDialog
+            triggerLabel="Resume"
+            triggerSize="sm"
+            triggerVariant="outline"
+            triggerClassName="hidden sm:inline-flex"
+            triggerTestId="nav-resume-button"
+          />
           <button
             type="button"
             className="lg:hidden p-2 text-foreground"
@@ -187,16 +183,13 @@ export function Navbar() {
                     </a>
                   );
                 })}
-                <a
-                  href={profile.resumeUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  data-testid="mobile-resume-button"
-                  className="ml-auto inline-flex items-center gap-2 px-4 py-2 text-sm border border-border rounded-md hover:border-accent hover:text-accent transition-colors"
-                >
-                  <FileText size={14} />
-                  Resume
-                </a>
+                <ThemeToggle data-testid="mobile-theme-toggle" />
+                <ResumeDialog
+                  triggerLabel="Resume"
+                  compact
+                  triggerClassName="ml-auto"
+                  triggerTestId="mobile-resume-button"
+                />
               </li>
             </ul>
           </motion.div>
