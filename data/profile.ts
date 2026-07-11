@@ -10,7 +10,7 @@ export const profile = {
   github: "https://github.com/SamP231004",
   linkedin: "https://www.linkedin.com/in/samp231004/",
   twitter: "https://x.com/SamP231004",
-  resumeUrl: "/resume.pdf",
+  resumeUrl: "/Portfolio/resume.pdf",
   avatar:
     "https://avatars.githubusercontent.com/u/142706204?s=400&u=b3c8475886140f835b78c2b9da47bbc0cde0b840&v=4",
   availability: "Available for Software Engineering Opportunities",
