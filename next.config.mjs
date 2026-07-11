@@ -6,6 +6,7 @@ const nextConfig = {
   basePath: "/Portfolio",
   assetPrefix: "/Portfolio/",
   images: {
+    unoptimized: true,
     remotePatterns: [
       { protocol: "https", hostname: "avatars.githubusercontent.com" },
       { protocol: "https", hostname: "raw.githubusercontent.com" },
