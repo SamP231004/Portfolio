@@ -1,0 +1,204 @@
+{
+  "theme": {
+    "mode": "dark",
+    "colors": {
+      "background": "#09090B",
+      "card_background": "#111113",
+      "card_hover": "#18181B",
+      "primary_text": "#FAFAFA",
+      "secondary_text": "#A1A1AA",
+      "border": "#27272A",
+      "accent": {
+        "DEFAULT": "#6366F1",
+        "hover": "#4F46E5",
+        "glow": "rgba(99, 102, 241, 0.15)"
+      },
+      "surface_glass": "rgba(9, 9, 11, 0.7)",
+      "error": "#EF4444",
+      "success": "#10B981"
+    },
+    "typography": {
+      "headings": {
+        "family": "Geist, system-ui, sans-serif",
+        "weights": ["300", "500", "700"],
+        "tracking": "tracking-tight"
+      },
+      "body": {
+        "family": "Geist, system-ui, sans-serif",
+        "weights": ["400", "500"],
+        "tracking": "tracking-normal"
+      },
+      "mono": {
+        "family": "Geist Mono, JetBrains Mono, monospace",
+        "weights": ["400", "500"],
+        "tracking": "tracking-tight"
+      }
+    }
+  },
+  "layouts": {
+    "max_width": "max-w-[1200px] mx-auto",
+    "spacing_philosophy": "Generous spacing. Use p-8 to p-12 for section paddings. Create breathing room between technical elements.",
+    "grid_system": {
+      "bento": "grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-6",
+      "technical_borders": "Use border-collapse techniques or raw 1px solid borders (border-zinc-800) to create a structured, engineering-focused look."
+    }
+  },
+  "sections": [
+    {
+      "name": "Navigation",
+      "type": "Sticky Nav",
+      "layout": "Fixed top, w-full, z-50",
+      "surface": "Crystal Glass: bg-zinc-950/70 backdrop-blur-xl border-b border-white/10. Do not use fully transparent background.",
+      "elements": [
+        "SP. logo (Mono font, tracking-tighter, font-bold)",
+        "Desktop Links: Home, About, Experience, Projects, Skills, Open Source, Contact",
+        "Mobile: Slide-down menu (not just a basic hamburger without animation)",
+        "Icons: GitHub, LinkedIn, X (using Lucide icons, 20x20)",
+        "Resume Button: Pill-shaped, border border-zinc-700 hover:border-indigo-500 hover:text-indigo-400 transition-colors"
+      ]
+    },
+    {
+      "name": "Hero",
+      "layout": "Two-column grid (md:grid-cols-12 gap-8 items-center min-h-[85vh] pt-24)",
+      "elements": [
+        "Column 1 (col-span-12 md:col-span-7): Availability badge (green dot + 'Available for new opportunities' in subtle pill), Name 'SAMARTH PATEL' in text-5xl md:text-6xl+ font-bold tracking-tighter, Headline 'Software Engineer building production-ready applications', rotating role text (Framer Motion).",
+        "Column 2 (col-span-12 md:col-span-5): Profile Image Card. Image constrained to max-h-[500px], grayscale filter by default, color on hover. Floating tech badges (Java, Spring Boot, React, Next.js, Node.js, AWS) using Framer Motion subtle floating."
+      ]
+    },
+    {
+      "name": "Engineering Highlights",
+      "layout": "Grid 4 columns (grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4)",
+      "card_style": "Flat background (bg-[#111113]), 1px subtle border, no shadow. Hover: slight lift (-translate-y-1), border-indigo-500/50.",
+      "content": "4 numerical or metric-based highlight cards (e.g., '100% Test Coverage', '5+ Production Apps') - keep it realistic, not fake."
+    },
+    {
+      "name": "About",
+      "layout": "Bento Grid (grid-cols-1 md:grid-cols-3 gap-6)",
+      "elements": [
+        "Heading: 'About Me' (text-3xl)",
+        "3 Sub-cards detailing background, engineering philosophy, and personal traits. Use subtle radial gradient backgrounds on hover."
+      ]
+    },
+    {
+      "name": "Experience",
+      "layout": "Vertical Timeline",
+      "elements": [
+        "Experiences: DeepNeurons.ai, SmartInternz",
+        "Timeline nodes: Absolute positioned glowing dots",
+        "Content: Role, Company, Duration, Tech Stack tags (mono font)",
+        "Action: 'View Certificate' buttons (ghost style with external link icon)"
+      ]
+    },
+    {
+      "name": "Featured Projects",
+      "layout": "Stack of 6 large cards, alternating layout (md:flex-row, then md:flex-row-reverse)",
+      "projects": ["EchoOwl", "Mystery Messages", "Stream Sphere", "Blog Platform", "Group Chat Extension", "Payment Integration"],
+      "card_style": "Large containers (bg-[#111113] border border-zinc-800 rounded-xl overflow-hidden).",
+      "image_treatment": "Browser-window style: top bar with 3 dots (red/yellow/green or monochrome zinc-700), bg-zinc-900, containing the screenshot. Image scales 1.05x on group-hover.",
+      "content": "Title (text-2xl), Description (text-zinc-400), Tech stack tags (pill, mono font text-xs text-indigo-300 bg-indigo-500/10), GitHub/Live links."
+    },
+    {
+      "name": "More Projects",
+      "layout": "Compact Grid (grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4)",
+      "card_style": "Dense, folder-like aesthetic. Minimalist."
+    },
+    {
+      "name": "Open Source",
+      "layout": "Empty-state terminal aesthetic",
+      "content": "Mono font heading. Message indicating 'Compiling open source contributions...' or a minimal card showing recent PRs."
+    },
+    {
+      "name": "Skills",
+      "layout": "Grouped categories (Languages, Frontend, Backend, Databases, Cloud, Tools, Core Engineering)",
+      "rule": "NO progress bars. NO percentages.",
+      "card_style": "Category heading + flex wrap of tag pills. Borders subtle, hover text-white."
+    },
+    {
+      "name": "Contact",
+      "layout": "Two-column (md:grid-cols-2 gap-12)",
+      "elements": [
+        "Column 1: 'Let's build something.' large text, email, location, social links.",
+        "Column 2: Form (Name, Email, Phone, Message). Inputs: bg-zinc-900 border-zinc-800 focus:border-indigo-500. Submit button solid indigo.",
+        "Toasts: Use Sonner for form validation/success feedback."
+      ]
+    },
+    {
+      "name": "Footer",
+      "layout": "Massive top padding (pt-32 pb-8), minimal text",
+      "content": "Copyright, built with Next.js & Tailwind, subtle text-zinc-600."
+    }
+  ],
+  "visual_enhancers": [
+    "Use a subtle CSS noise overlay (opacity-5) across the entire body to kill digital flatness.",
+    "Section reveals: framer-motion `whileInView` with opacity 0 to 1, y: 20 to 0. Keep duration short (0.4s) to avoid lag.",
+    "Hover states: Ensure all interactive elements have specific text color and border changes on hover."
+  ],
+  "motion": {
+    "hero_entrance": "Staggered fade-in (y: 20 -> 0) for text elements.",
+    "role_text_rotation": "AnimatePresence with y-axis flip or vertical slide for changing roles.",
+    "project_hover": "Scale image 1.05x, elevate card shadow, brighten border.",
+    "prefers_reduced_motion": "Wrap heavy animations in useReducedMotion checks."
+  },
+  "accessibility": {
+    "contrast": "Text against #09090B or #111113 must exceed 4.5:1. Use #FAFAFA for headings, #A1A1AA for body.",
+    "focus": "focus-visible:ring-2 focus-visible:ring-indigo-500 focus-visible:ring-offset-2 focus-visible:ring-offset-zinc-950",
+    "aria": "Use aria-hidden='true' for decorative floating badges.",
+    "test_attributes": "Add data-testid attributes to all buttons, links, form inputs, and nav items (e.g., data-testid='hero-resume-button')."
+  },
+  "image_urls": {
+    "profile": {
+      "url": "https://images.pexels.com/photos/6804094/pexels-photo-6804094.jpeg",
+      "description": "Portrait of a young IT professional with headphones, confidently posing in dim lighting.",
+      "usage": "Hero section, cropped to portrait/card shape, grayscale with hover color."
+    },
+    "project_echoowl": {
+      "url": "https://images.unsplash.com/photo-1551288049-bebda4e38f71",
+      "description": "Graphs of performance analytics on a dark mode screen.",
+      "usage": "Featured Projects - EchoOwl screenshot"
+    },
+    "project_mystery_messages": {
+      "url": "https://images.pexels.com/photos/30530409/pexels-photo-30530409.jpeg",
+      "description": "Dark-themed chat interface.",
+      "usage": "Featured Projects - Mystery Messages screenshot"
+    },
+    "project_stream_sphere": {
+      "url": "https://images.unsplash.com/photo-1619262105903-c65a6396c72f",
+      "description": "Dark digital dashboard interface.",
+      "usage": "Featured Projects - Stream Sphere screenshot"
+    },
+    "project_blog_platform": {
+      "url": "https://images.unsplash.com/photo-1773349807434-374473797148",
+      "description": "Computer monitor displaying code in a dark room.",
+      "usage": "Featured Projects - Blog Platform screenshot"
+    },
+    "project_group_chat": {
+      "url": "https://images.unsplash.com/photo-1662974770404-468fd9660389",
+      "description": "Texting/chat interface dark mode.",
+      "usage": "Featured Projects - Group Chat Extension screenshot"
+    },
+    "project_payment_integration": {
+      "url": "https://images.unsplash.com/photo-1607799632518-da91dd151b38",
+      "description": "Financial/payment dashboard interface.",
+      "usage": "Featured Projects - Payment Integration screenshot"
+    }
+  },
+  "instructions_to_main_agent": [
+    "Initialize standard Shadcn components for inputs, buttons, and toasts (Sonner).",
+    "Use lucide-react for all standard icons.",
+    "Do not build fake percentage bars for skills. Use pill layouts.",
+    "Build custom HTML/Tailwind structures for the Bento grids and Project Cards instead of forcing a generic Card component.",
+    "Implement Framer Motion for the rotating text in the hero and section scroll reveals.",
+    "Ensure 'browser window' mockups for project images use basic divs (rounded-t-lg, bg-zinc-900) with 3 colored or monochrome dots.",
+    "Add 'data-testid' to ALL interactive elements.",
+    "Create JS/JSX files where applicable. Adhere strictly to the defined #09090B background and #FAFAFA/#A1A1AA text palette."
+  ],
+  "UNIVERSAL_GUIDELINES_FOR_MAIN_AGENT": [
+    "Do not center align the app container text by default. Keep it left-aligned for reading flow.",
+    "Use glass-morphism effects with backdrop-blur-xl and semi-transparent backgrounds for sticky headers, never fully transparent.",
+    "Avoid using generic AI emoji characters like 🤖🧠💭💡.",
+    "Avoid universal transitions (transition: all). Target specific properties like transition-colors or transition-transform.",
+    "Ensure generous spacing: p-8, p-12, py-24 for distinct sections.",
+    "Implement Sonner for toast notifications (e.g., in the Contact form).",
+    "All interactive elements MUST include a data-testid attribute in kebab-case."
+  ]
+}
